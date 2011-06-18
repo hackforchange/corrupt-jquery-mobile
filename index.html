@@ -8,6 +8,9 @@
 	<link rel="stylesheet"  href="jquery.mobile-1.0a4.1.min.css" /> 
 	<script type="text/javascript" src="jquery-1.5.2.js"></script> 
 	<script type="text/javascript" src="jquery.mobile-1.0a4.1.min.js"></script> 
+  <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
+  <script src="phonegap.js" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript" charset="utf-8" src="camera.js"></script>
 </head> 
 <body class="ui-mobile-viewport">
 <div data-role="page">
@@ -19,7 +22,15 @@
     <div data-theme="a" class="ui-btn ui-btn-corner-all ui-shadow ui-btn-hover-a ui-btn-down-a" aria-disabled="false">
       <button type="submit" data-theme="a" name="submit" value="submit-value" class="ui-btn-hidden" aria-disabled="false" style="width:90%;">Submit</button>
     </div>
-    </form>
+  </form>
+  <div onload="onLoad()">
+    <button onclick="capturePhoto();">Capture Photo</button> <br>
+    <button onclick="capturePhotoEdit();">Capture Editable Photo</button> <br>
+    <button onclick="getPhoto(pictureSource.PHOTOLIBRARY);">From Photo Library</button><br>
+    <button onclick="getPhoto(pictureSource.SAVEDPHOTOALBUM);">From Photo Album</button><br>
+    <img style="display:none;width:60px;height:60px;" id="smallImage" src="" />
+    <img style="display:none;" id="largeImage" src="" />
+  </div>
   </div>
 </div>
 </body>
